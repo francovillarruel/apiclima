@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Api de Clima</h1>
+  <label for="cityInput">Ingresá el nombre de la Ciudad:</label>
+  <input type="text" id="cityInput" [(ngModel)]="cityName" (keyup.enter)="getWeather()" class="form-control">
+  <button (click)="getWeather()" class="btn btn-primary">Obtener Clima</button>
+
+  <!-- Mostrar los datos del clima aquí -->
+
+  <h2>Clima en {{ weatherData?.name }}, {{ weatherData?.sys?.country }}</h2>
+  <p>Temperatura: {{ weatherData?.main?.temp }}°C</p>
+  <p>Descripción: {{ weatherData?.weather[0]?.description }}</p>
+</div>
